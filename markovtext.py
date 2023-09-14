@@ -1,6 +1,7 @@
 # only real gamers get this (idk why I made a repo for this)
 import sys
 import random
+import os
 
 def main():
     if len(sys.argv) != 4:
@@ -11,6 +12,10 @@ def main():
     k = int(sys.argv[2])
     end_length = int(sys.argv[3])
     corpus = {}
+
+    if not os.path.isfile(sys.argv[1]):
+        print("Corpus file not found!")
+        return 1
 
     with open(sys.argv[1]) as f:
         seed = ""
