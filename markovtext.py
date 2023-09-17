@@ -40,6 +40,7 @@ def main():
     while len(generated_text) < end_length:
         key = generated_text[-k:]
         if not key in corpus:
+            generated += key
             break
         generated_text += random.choice(corpus[key])
 
